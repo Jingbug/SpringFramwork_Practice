@@ -15,9 +15,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
+    // Singleton 깨지나? => Test
+
     // 리팩터링을 통한 중복요소 제거
     @Bean   // Spring Container에 등록하는 어노테이션
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
@@ -28,11 +33,13 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return  new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return  new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 }
