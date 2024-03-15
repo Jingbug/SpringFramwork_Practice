@@ -33,8 +33,8 @@ public class ApplicationContextBasicFindTest {
     @Test
     @DisplayName("Select Bean Detail-Type")
     void findBeanByDType() {
-        MemberServiceImpl memberServiceImpl = ac.getBean("memberServiceImpl", MemberServiceImpl.class);
-        assertThat(memberServiceImpl).isInstanceOf(MemberServiceImpl.class);
+        MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
+        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
     @Test
