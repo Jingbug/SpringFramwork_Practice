@@ -3,7 +3,10 @@ package com.example.practice.order;
 import com.example.practice.discount.DiscountPolicy;
 import com.example.practice.member.Member;
 import com.example.practice.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
     /*
     할인 정책을 바꾸기위해선 OrderServiceImple을 수정해야한다. 변경시 자유로운 확장을 못함 => OCP 위반
@@ -17,6 +20,7 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy;
     private final MemberRepository memberRepository;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.discountPolicy = discountPolicy;
         this.memberRepository = memberRepository;

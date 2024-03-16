@@ -2,7 +2,9 @@ package com.example.practice.discount;
 
 import com.example.practice.member.Grade;
 import com.example.practice.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
 
     // 비율 할인 정책
