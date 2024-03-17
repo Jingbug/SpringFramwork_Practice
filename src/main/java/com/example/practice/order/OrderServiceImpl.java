@@ -4,7 +4,6 @@ import com.example.practice.discount.DiscountPolicy;
 import com.example.practice.member.Member;
 import com.example.practice.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
