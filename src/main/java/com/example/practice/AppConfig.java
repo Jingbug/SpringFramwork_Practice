@@ -22,7 +22,6 @@ public class AppConfig {
     // 리팩터링을 통한 중복요소 제거
     @Bean   // Spring Container에 등록하는 어노테이션
     public MemberRepository memberRepository() {
-        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
