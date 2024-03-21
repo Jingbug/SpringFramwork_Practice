@@ -1,5 +1,8 @@
 package com.example.practice.lifecycle;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 public class NetworkClient /*implements InitializingBean, DisposableBean */{
 
     private String url;
@@ -26,10 +29,12 @@ public class NetworkClient /*implements InitializingBean, DisposableBean */{
         System.out.println("close = " + url);
     }
 
+    @PreDestroy
     public void destroy() {
         disconnect();
     }
 
+    @PostConstruct
     public void init(){
         connect();
         call("초기화 연결 메세지");
